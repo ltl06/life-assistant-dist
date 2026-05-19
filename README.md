@@ -58,7 +58,7 @@ chmod +x start.sh
 
 ## 配置（可选）
 
-编辑 `backend/.env`：
+编辑 `backend/.env`（参考 `.env.example` 填写）：
 
 ```env
 OPENAI_API_KEY=sk-your-openai-key
@@ -68,11 +68,6 @@ DEEPSEEK_API_KEY=sk-your-deepseek-key
 WEATHER_API_KEY=your-weatherapi-key
 # 在设置页面填写城市名即可显示天气
 ```
-
-## 系统要求
-
-- **后端**: Python 3.8+
-- **前端**: Node.js 18+
 
 ## 快捷键
 
@@ -86,11 +81,15 @@ WEATHER_API_KEY=your-weatherapi-key
 
 ```
 life-assistant-dist/
+├── report.md                # 研究报告（基于SDT的交互设计+用户评估）
+├── README.md               # 本文件
+├── .env.example            # 环境变量模板
+├── .gitignore
+│
 ├── backend/
 │   ├── main.py
 │   ├── database.py           # 数据库模型
 │   ├── requirements.txt
-│   ├── .env                 # 环境变量
 │   ├── routers/
 │   │   ├── auth.py          # 用户认证
 │   │   ├── health.py        # 健康记录
@@ -103,8 +102,8 @@ life-assistant-dist/
 │   │   ├── export.py         # CSV 导出
 │   │   ├── quick_add.py      # 快捷记录
 │   │   └── ai_assistant.py  # AI 对话
-│   ├── start.bat
-│   └── start.sh
+│   ├── agent/                # LLM Agent 核心
+│   ├── start.bat / start.sh
 │
 └── frontend/
     ├── src/
@@ -128,6 +127,21 @@ life-assistant-dist/
     ├── tailwind.config.js
     └── ...
 ```
+
+## 系统要求
+
+- **后端**: Python 3.8+
+- **前端**: Node.js 18+
+
+## 研究报告
+
+`report.md` 包含本项目的完整研究文档，涵盖：
+
+- 基于自我决定理论（SDT）的交互设计框架
+- 十四功能模块的设计原理
+- LLM Agent 执行循环设计
+- 混合研究方法评估（SUS量表 + 对照实验 + 用户调研）
+- 开放式反馈的主题编码分析
 
 ## 生产部署
 
